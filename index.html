@@ -10,24 +10,33 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
     <!-- Top Navigation Bar -->
-    <nav class="border-b border-slate-800 bg-slate-900 sticky top-0 z-30">
+    <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-30">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-sm">CI</div>
                 <div>
                     <span class="font-bold text-white text-base">CORPINDEX</span>
-                    <span class="ml-2 text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">TERMINAL v2.4</span>
+                    <span class="ml-2 text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">TERMINAL v2.5</span>
                 </div>
             </div>
-            <button onclick="exportToCSV()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs px-3 py-2 rounded-lg">
-                Export CSV
-            </button>
+            <div class="flex items-center gap-2 sm:gap-3">
+                <span id="apiStatus" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Live Feed: Active
+                </span>
+                <button onclick="exportToCSV()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs px-3 py-2 rounded-lg transition-colors">
+                    Export CSV
+                </button>
+                <button onclick="openPricingModal()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition-all shadow-lg shadow-amber-500/20">
+                    Upgrade ($99/mo)
+                </button>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-6 w-full">
         <!-- KPI Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
@@ -52,14 +61,23 @@
             </div>
         </div>
 
-        <!-- Enterprise Index Table -->
+        <!-- Enterprise Index Table with Regex Search & Sector Filter -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-            <div class="p-4 border-b border-slate-800 flex flex-col sm:flex-row justify-between gap-3">
+            <div class="p-4 border-b border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3">
                 <div>
                     <h2 class="text-base font-semibold text-white">Global Monitored Enterprise Index</h2>
-                    <p class="text-xs text-slate-400">Pilih baris untuk melihat detail korporat</p>
+                    <p class="text-xs text-slate-400">Pencarian mendukung teks bebas atau pola Regex (contoh: <code class="text-indigo-400">^APX</code> atau <code class="text-indigo-400">\.US$</code>)</p>
                 </div>
-                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Cari perusahaan..." class="bg-slate-950 border border-slate-700 text-sm text-white rounded-lg px-3 py-1.5 focus:outline-none">
+                <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                    <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Cari emiten / regex..." class="bg-slate-950 border border-slate-700 text-sm text-white rounded-lg px-3.5 py-2 focus:outline-none focus:border-indigo-500 w-full sm:w-64">
+                    <select id="sectorFilter" onchange="filterTable()" class="bg-slate-950 border border-slate-700 text-sm text-slate-200 rounded-lg px-3.5 py-2 focus:outline-none">
+                        <option value="ALL">Semua Sektor</option>
+                        <option value="Supply Chain">Supply Chain</option>
+                        <option value="Telecommunications">Telecommunications</option>
+                        <option value="Financial Markets">Financial Markets</option>
+                        <option value="Enterprise Tech">Enterprise Tech</option>
+                    </select>
+                </div>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
@@ -78,6 +96,34 @@
         </div>
     </main>
 
+    <!-- Pricing / Lemon Squeezy Modal -->
+    <div id="pricingModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 space-y-6 relative shadow-2xl">
+            <button onclick="closePricingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">&times;</button>
+            <div class="text-center space-y-2">
+                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">Global Corporate License</span>
+                <h3 class="text-xl font-bold text-white">Unlock Real-Time Feed & API Access</h3>
+                <p class="text-xs text-slate-400">Akses tak terbatas ke feed pasar global, unduhan CSV otomatis, dan integrasi webhook langsung untuk meja korporat Anda.</p>
+            </div>
+            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-1">
+                <span class="text-3xl font-extrabold text-white">$99</span>
+                <span class="text-xs text-slate-400">/ bulan (ditagih annually)</span>
+            </div>
+            <div class="space-y-3">
+                <a href="https://app.lemonsqueezy.com" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl transition-colors shadow-lg shadow-indigo-500/20">
+                    Checkout via Lemon Squeezy (USD)
+                </a>
+                <button onclick="closePricingModal()" class="w-full text-center text-xs text-slate-400 hover:text-slate-500 py-1">
+                    Tutup Jendela
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-t border-slate-800/80 py-4 text-center text-xs text-slate-500">
+        CorpIndex Enterprise Terminal v2.5 • Secured & Deployed via Cloudflare Pages
+    </footer>
+
     <script>
         const companies = [
             { ticker: "APX.US", name: "Apex Logistics Corp", region: "North America", sector: "Supply Chain", score: 94.2, status: "Optimal" },
@@ -89,6 +135,10 @@
         function renderTable(data) {
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
+            if (data.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-slate-500">Tidak ada emiten yang cocok dengan pola pencarian / regex tersebut.</td></tr>`;
+                return;
+            }
             data.forEach(c => {
                 const row = document.createElement('tr');
                 row.className = 'hover:bg-slate-800/50 transition-colors';
@@ -96,16 +146,31 @@
                     <td class="p-4"><div class="font-semibold text-white">${c.name}</div><div class="text-xs font-mono text-slate-400">${c.ticker}</div></td>
                     <td class="p-4 text-slate-300">${c.region}</td>
                     <td class="p-4 text-slate-400">${c.sector}</td>
-                    <td class="p-4 font-bold text-emerald-400">${c.score}</td>
+                    <td class="p-4 font-bold text-emerald-400">${c.score.toFixed(1)}</td>
                     <td class="p-4"><span class="px-2.5 py-1 text-xs font-medium rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">${c.status}</span></td>
                 `;
                 tbody.appendChild(row);
             });
         }
 
+        // Fitur Pencarian Canggih Berbasis Regex & Sektor
         function filterTable() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = companies.filter(c => c.name.toLowerCase().includes(query) || c.ticker.toLowerCase().includes(query));
+            const query = document.getElementById('searchInput').value;
+            const sector = document.getElementById('sectorFilter').value;
+            
+            let regex;
+            try {
+                // Mendukung ekspresi regular (regex) secara aman secara real-time
+                regex = new RegExp(query, 'i');
+            } catch (e) {
+                regex = new RegExp('', 'i'); // Fallback jika regex belum lengkap diketik
+            }
+
+            const filtered = companies.filter(c => {
+                const matchesRegex = regex.test(c.name) || regex.test(c.ticker) || regex.test(c.sector);
+                const matchesSector = sector === 'ALL' || c.sector === sector;
+                return matchesRegex && matchesSector;
+            });
             renderTable(filtered);
         }
 
@@ -115,12 +180,30 @@
             const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
             const link = document.createElement("a");
             link.setAttribute("href", encodeURI(csvContent));
-            link.setAttribute("download", "CorpIndex_Report.csv");
+            link.setAttribute("download", "CorpIndex_Enterprise_Report.csv");
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
 
+        function openPricingModal() {
+            document.getElementById('pricingModal').classList.remove('hidden');
+        }
+
+        function closePricingModal() {
+            document.getElementById('pricingModal').classList.add('hidden');
+        }
+
+        // Simulasi Live Market Data Feed secara periodik
+        setInterval(() => {
+            companies.forEach(c => {
+                const delta = (Math.random() * 0.4 - 0.2);
+                c.score = Math.min(99.9, Math.max(60.0, +(c.score + delta).toFixed(1)));
+            });
+            filterTable();
+        }, 5000);
+
+        // Render awal
         renderTable(companies);
     </script>
 </body>
