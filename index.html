@@ -12,20 +12,18 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
     <!-- Top Navigation Bar -->
-    <div class="flex items-center gap-3">
-    <!-- Logo Baru: Terminal Financial Gradient & Growth Icon -->
-    <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-600 to-cyan-400 shadow-lg shadow-indigo-500/30 border border-indigo-400/30">
-        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-    </div>
-    <div>
-        <span class="font-extrabold text-white tracking-wider text-base">CORP<span class="text-indigo-400">INDEX</span></span>
-        <span class="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-indigo-300 border border-indigo-500/30 font-mono">ENTERPRISE v2.5</span>
-    </div>
-</div>
-                    <span class="font-bold text-white text-base">CORPINDEX</span>
-                    <span class="ml-2 text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">TERMINAL v2.5</span>
+    <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- Logo Baru: Terminal Financial Gradient & Growth Icon -->
+                <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-600 to-cyan-400 shadow-lg shadow-indigo-500/30 border border-indigo-400/30">
+                    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-extrabold text-white tracking-wider text-base">CORP<span class="text-indigo-400">INDEX</span></span>
+                    <span class="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-indigo-300 border border-indigo-500/30 font-mono">ENTERPRISE v2.5</span>
                 </div>
             </div>
             <div class="flex items-center gap-2 sm:gap-3">
@@ -160,17 +158,15 @@
             });
         }
 
-        // Fitur Pencarian Canggih Berbasis Regex & Sektor
         function filterTable() {
             const query = document.getElementById('searchInput').value;
             const sector = document.getElementById('sectorFilter').value;
             
             let regex;
             try {
-                // Mendukung ekspresi regular (regex) secara aman secara real-time
                 regex = new RegExp(query, 'i');
             } catch (e) {
-                regex = new RegExp('', 'i'); // Fallback jika regex belum lengkap diketik
+                regex = new RegExp('', 'i');
             }
 
             const filtered = companies.filter(c => {
@@ -201,7 +197,6 @@
             document.getElementById('pricingModal').classList.add('hidden');
         }
 
-        // Simulasi Live Market Data Feed secara periodik
         setInterval(() => {
             companies.forEach(c => {
                 const delta = (Math.random() * 0.4 - 0.2);
@@ -210,7 +205,6 @@
             filterTable();
         }, 5000);
 
-        // Render awal
         renderTable(companies);
     </script>
 </body>
