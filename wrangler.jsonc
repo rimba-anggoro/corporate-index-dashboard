@@ -1,0 +1,12 @@
+
+{
+  "$schema": "https://schema.cloudflare.com/wrangler/config-schema.json",
+  "name": "corporate-index-dashboard",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-14",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  }
+}
