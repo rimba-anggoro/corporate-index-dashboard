@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Management & Index Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto space-y-6">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-4 gap-4">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight text-white">Global Corporate Index & Analytics</h1>
+                <p class="text-sm text-slate-400">Real-time management index and financial health monitoring.</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Live Market Feed
+                </span>
+                <button onclick="alert('Data updated successfully!')" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                    Refresh Data
+                </button>
+            </div>
+        </header>
+
+        <!-- Metric Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-800/50 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Financial Health Index</p>
+                <div class="flex items-baseline justify-between mt-2">
+                    <span class="text-3xl font-bold text-white">88.4</span>
+                    <span class="text-xs font-semibold text-emerald-400">+4.2%</span>
+                </div>
+            </div>
+            <div class="bg-slate-800/50 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Operational Efficiency</p>
+                <div class="flex items-baseline justify-between mt-2">
+                    <span class="text-3xl font-bold text-white">92.1</span>
+                    <span class="text-xs font-semibold text-emerald-400">+1.8%</span>
+                </div>
+            </div>
+            <div class="bg-slate-800/50 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">ESG Compliance Score</p>
+                <div class="flex items-baseline justify-between mt-2">
+                    <span class="text-3xl font-bold text-white">79.5</span>
+                    <span class="text-xs font-semibold text-rose-400">-0.5%</span>
+                </div>
+            </div>
+            <div class="bg-slate-800/50 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Market Risk Index</p>
+                <div class="flex items-baseline justify-between mt-2">
+                    <span class="text-3xl font-bold text-white">Low</span>
+                    <span class="text-xs font-semibold text-slate-400">Stable</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="bg-slate-800/40 border border-slate-800 rounded-xl overflow-hidden">
+            <div class="p-4 border-b border-slate-800">
+                <h2 class="text-lg font-semibold text-white">Monitored Enterprise Index</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-xs font-semibold text-slate-400 uppercase bg-slate-900/50">
+                            <th class="p-4">Enterprise Name</th>
+                            <th class="p-4">Sector</th>
+                            <th class="p-4">Health Score</th>
+                            <th class="p-4">Trend</th>
+                            <th class="p-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-sm">
+                        <tr class="hover:bg-slate-800/30 transition-colors">
+                            <td class="p-4 font-medium text-white">Apex Logistics Corp</td>
+                            <td class="p-4 text-slate-400">Supply Chain</td>
+                            <td class="p-4 font-semibold text-emerald-400">94.2</td>
+                            <td class="p-4 text-emerald-400">▲ Bullish</td>
+                            <td class="p-4"><span class="px-2 py-1 text-xs bg-emerald-500/10 text-emerald-400 rounded">Optimized</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition-colors">
+                            <td class="p-4 font-medium text-white">Nippon Connectivity Ltd</td>
+                            <td class="p-4 text-slate-400">Telecommunications</td>
+                            <td class="p-4 font-semibold text-emerald-400">89.1</td>
+                            <td class="p-4 text-emerald-400">▲ Bullish</td>
+                            <td class="p-4"><span class="px-2 py-1 text-xs bg-emerald-500/10 text-emerald-400 rounded">Stable</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition-colors">
+                            <td class="p-4 font-medium text-white">Zenith Global Holdings</td>
+                            <td class="p-4 text-slate-400">Financial Markets</td>
+                            <td class="p-4 font-semibold text-amber-400">76.4</td>
+                            <td class="p-4 text-rose-400">▼ Bearish</td>
+                            <td class="p-4"><span class="px-2 py-1 text-xs bg-amber-500/10 text-amber-400 rounded">Reviewing</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
