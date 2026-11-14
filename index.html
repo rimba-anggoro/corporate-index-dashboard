@@ -1,16 +1,127 @@
-function advancedFilter() {
-    // Mengambil nilai dari kotak input pencarian
-    const userInput = document.getElementById('searchInput').value;
-    
-    // Membuat pola Regex secara dinamis 
-    // 'i' berarti pencarian mengabaikan huruf besar/kecil (case-insensitive)
-    const regexPattern = new RegExp(userInput, 'i');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Intelligence & Corporate Index Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <nav class="border-b border-slate-800 bg-slate-900 sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-sm">CI</div>
+                <div>
+                    <span class="font-bold text-white text-base">CORPINDEX</span>
+                    <span class="ml-2 text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">TERMINAL v2.4</span>
+                </div>
+            </div>
+            <button onclick="exportToCSV()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs px-3 py-2 rounded-lg">
+                Export CSV
+            </button>
+        </div>
+    </nav>
 
-    // Menyaring data perusahaan menggunakan Regex .test()
-    const filtered = companies.filter(c => {
-        return regexPattern.test(c.name) || regexPattern.test(c.ticker) || regexPattern.test(c.sector);
-    });
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+        <!-- KPI Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-semibold text-slate-400 uppercase">Composite Health Index</p>
+                <p id="kpi-1-val" class="text-3xl font-bold text-white mt-2">89.2</p>
+                <p class="text-xs text-emerald-400 mt-1">▲ +3.8% YoY Outperforming</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-semibold text-slate-400 uppercase">Avg. EBITDA Margin</p>
+                <p class="text-3xl font-bold text-white mt-2">24.6%</p>
+                <p class="text-xs text-emerald-400 mt-1">▲ +1.4% QoQ</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-semibold text-slate-400 uppercase">ESG Compliance</p>
+                <p class="text-3xl font-bold text-white mt-2">81.4</p>
+                <p class="text-xs text-amber-400 mt-1">AA Rating Standard</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <p class="text-xs font-semibold text-slate-400 uppercase">Systemic Risk</p>
+                <p class="text-3xl font-bold text-white mt-2">Low</p>
+                <p class="text-xs text-indigo-400 mt-1">Beta 0.18 (Stable)</p>
+            </div>
+        </div>
 
-    // Menampilkan ulang tabel dengan data yang sudah disaring
-    renderTable(filtered);
-}
+        <!-- Enterprise Index Table -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+            <div class="p-4 border-b border-slate-800 flex flex-col sm:flex-row justify-between gap-3">
+                <div>
+                    <h2 class="text-base font-semibold text-white">Global Monitored Enterprise Index</h2>
+                    <p class="text-xs text-slate-400">Pilih baris untuk melihat detail korporat</p>
+                </div>
+                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Cari perusahaan..." class="bg-slate-950 border border-slate-700 text-sm text-white rounded-lg px-3 py-1.5 focus:outline-none">
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase bg-slate-950/60">
+                            <th class="p-4">Enterprise / Ticker</th>
+                            <th class="p-4">Region</th>
+                            <th class="p-4">Sector</th>
+                            <th class="p-4">Health Score</th>
+                            <th class="p-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody" class="divide-y divide-slate-800 text-sm"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const companies = [
+            { ticker: "APX.US", name: "Apex Logistics Corp", region: "North America", sector: "Supply Chain", score: 94.2, status: "Optimal" },
+            { ticker: "NCL.JP", name: "Nippon Connectivity Ltd", region: "Asia-Pacific", sector: "Telecommunications", score: 89.1, status: "Stable" },
+            { ticker: "ZGH.UK", name: "Zenith Global Holdings", region: "Europe", sector: "Financial Markets", score: 76.4, status: "Watchlist" },
+            { ticker: "VTX.US", name: "Vortex Cloud Systems", region: "North America", sector: "Enterprise Tech", score: 96.5, status: "Optimal" }
+        ];
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            data.forEach(c => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-800/50 transition-colors';
+                row.innerHTML = `
+                    <td class="p-4"><div class="font-semibold text-white">${c.name}</div><div class="text-xs font-mono text-slate-400">${c.ticker}</div></td>
+                    <td class="p-4 text-slate-300">${c.region}</td>
+                    <td class="p-4 text-slate-400">${c.sector}</td>
+                    <td class="p-4 font-bold text-emerald-400">${c.score}</td>
+                    <td class="p-4"><span class="px-2.5 py-1 text-xs font-medium rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">${c.status}</span></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterTable() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = companies.filter(c => c.name.toLowerCase().includes(query) || c.ticker.toLowerCase().includes(query));
+            renderTable(filtered);
+        }
+
+        function exportToCSV() {
+            const headers = ["Ticker", "Name", "Region", "Sector", "Score", "Status"];
+            const rows = companies.map(c => [c.ticker, `"${c.name}"`, c.region, c.sector, c.score, c.status]);
+            const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+            const link = document.createElement("a");
+            link.setAttribute("href", encodeURI(csvContent));
+            link.setAttribute("download", "CorpIndex_Report.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        renderTable(companies);
+    </script>
+</body>
+</html>
