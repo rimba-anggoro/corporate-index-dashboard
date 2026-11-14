@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CorpIndex — Global Intelligence Apex Terminal v8.0</title>
+    <title>CorpIndex — Global Intelligence Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -45,14 +45,13 @@
         </div>
     </div>
 
-    <!-- Top Live Geopolitical & Corporate News Ticker (Trusted Intelligence Sources) -->
+    <!-- Top Live Geopolitical News Ticker -->
     <div class="no-print bg-slate-950 border-b border-slate-800/80 py-2 overflow-hidden text-[11px] font-mono">
         <div class="animate-marquee gap-10 text-slate-300">
-            <span><strong class="text-emerald-400">[S&P GLOBAL 2026]</strong> Global supply chains shifting toward regionalization & nearshoring amid persistent tariff pressures.</span>
+            <span><strong class="text-emerald-400">[S&P GLOBAL]</strong> Global supply chains shifting toward regionalization & nearshoring amid persistent tariff pressures.</span>
             <span><strong class="text-indigo-400">[EY GEOSTRATEGY]</strong> State interventionism & critical mineral scarcity reshaping cross-border technology investments.</span>
             <span><strong class="text-amber-400">[WEF RISK REPORT]</strong> AI infrastructure bottlenecks & sovereign cybersecurity risks drive corporate compliance fragmentation.</span>
             <span><strong class="text-cyan-400">[APAC TRADE]</strong> Intra-Asia semiconductor supply corridors normalize as advanced manufacturing hubs expand.</span>
-            <span><strong class="text-emerald-400">[S&P GLOBAL 2026]</strong> Global supply chains shifting toward regionalization & nearshoring amid persistent tariff pressures.</span>
         </div>
     </div>
 
@@ -67,7 +66,6 @@
                 </div>
                 <div>
                     <span class="font-extrabold text-white tracking-wider text-base">CORP<span class="text-indigo-400">INDEX</span></span>
-                    <span class="hidden md:inline-block ml-2 text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-cyan-300 border border-cyan-500/30 font-mono">SUITE v8.0</span>
                 </div>
             </div>
 
@@ -103,7 +101,7 @@
         <div class="no-print bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
             <div class="flex flex-wrap items-center gap-2">
                 <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono" id="tierBadge">FREE TIER</span>
-                <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-mono text-[10px]">SOC2 TYPE II • GLOBAL LOGO & LIVE FEED</span>
+                <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-mono text-[10px]">SOC2 TYPE II COMPLIANT</span>
                 <span class="text-slate-400" id="sessionStatusText">Global Top 100 enterprise terminal with real-time analytics.</span>
             </div>
             <button onclick="openMethodologyModal()" class="text-cyan-400 hover:text-cyan-300 font-semibold text-left sm:text-right shrink-0">
@@ -154,15 +152,15 @@
             </button>
         </div>
 
-        <!-- VIEW 1: GLOBAL TOP 1-100 DIRECTORY WITH OFFICIAL LOGOS -->
+        <!-- VIEW 1: GLOBAL TOP 1-100 DIRECTORY -->
         <div id="view-top100" class="print-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
             <div class="p-4 border-b border-slate-800 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
                 <div>
                     <h2 class="print-text-dark text-base font-semibold text-white">World's Top 1–100 Largest Corporations</h2>
-                    <p class="text-xs text-slate-400">Official corporate logos, live valuation, and regex search (<code class="text-indigo-400">\.JP$</code>, <code class="text-indigo-400">^Apple|NVIDIA</code>).</p>
+                    <p class="text-xs text-slate-400">Official corporate logos, live valuation, and advanced institutional search.</p>
                 </div>
                 <div class="no-print flex flex-wrap gap-2 w-full lg:w-auto">
-                    <input type="text" id="searchInput" onkeyup="filterTop100()" placeholder="Search company, ticker, regex..." class="bg-slate-950 border border-slate-700 text-sm text-white rounded-lg px-3.5 py-2 focus:outline-none focus:border-indigo-500 flex-1 sm:w-56 smooth-transition">
+                    <input type="text" id="searchInput" onkeyup="filterTop100()" placeholder="Search company, ticker, sector..." class="bg-slate-950 border border-slate-700 text-sm text-white rounded-lg px-3.5 py-2 focus:outline-none focus:border-indigo-500 flex-1 sm:w-56 smooth-transition">
                     <select id="rankRangeFilter" onchange="filterTop100()" class="bg-slate-950 border border-slate-700 text-xs text-slate-200 rounded-lg px-3 py-2">
                         <option value="100">Top 1–100 (All)</option>
                         <option value="10">Top 1–10</option>
@@ -251,7 +249,6 @@
             <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl font-mono text-xs text-emerald-400 space-y-2 max-h-80 overflow-y-auto" id="auditLogsBox">
                 <div>[10:32:01 UTC] AUTH_SESSION_INIT — Client authenticated successfully via Enterprise SSO.</div>
                 <div>[10:32:05 UTC] GET /v8/global-100?limit=100 — Status 200 OK (Latency: 38ms)</div>
-                <div>[10:32:18 UTC] STREAM_WEBHOOK_TRIGGER — Market feed WebSocket active (Cloudflare Edge).</div>
             </div>
         </div>
 
@@ -286,7 +283,7 @@
         </div>
     </main>
 
-    <!-- DEEP COMPANY ANALYZER MODAL WITH 12M CHART -->
+    <!-- DEEP COMPANY ANALYZER MODAL -->
     <div id="analyzerModal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto smooth-transition">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 space-y-5 relative shadow-2xl my-auto">
             <button onclick="closeAnalyzerModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl font-bold">&times;</button>
@@ -411,7 +408,7 @@
     </div>
 
     <footer class="border-t border-slate-800/80 py-4 px-4 text-center text-xs text-slate-500">
-        CorpIndex Institutional Apex Terminal v8.0 • SOC2 Type II Compliant • Edge Deployed via Cloudflare
+        CorpIndex Institutional Terminal • SOC2 Type II Compliant • Edge Deployed via Cloudflare
     </footer>
 
     <script>
@@ -527,7 +524,6 @@
                 return +(Math.min(99.5, Math.max(75.0, baseScore + trend + wave))).toFixed(1);
             });
             history[11] = baseScore;
-            // High quality favicon logo URL using Google Favicons service
             const logoUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
             return {
                 rank: idx + 1,
@@ -554,7 +550,6 @@
         let currentUser = JSON.parse(localStorage.getItem('corpindex_user')) || null;
         let isProLicensed = localStorage.getItem('corpindex_pro') === 'true';
 
-        // RENDER TOP 1-100 WITH OFFICIAL LOGOS
         function renderTop100(list) {
             const tbody = document.getElementById('top100Body');
             tbody.innerHTML = '';
@@ -585,12 +580,15 @@
         }
 
         function filterTop100() {
-            const query = document.getElementById('searchInput').value;
+            const query = document.getElementById('searchInput').value.toLowerCase();
             const maxRank = parseInt(document.getElementById('rankRangeFilter').value);
             const region = document.getElementById('regionFilter').value;
-            let regex;
-            try { regex = new RegExp(query, 'i'); } catch (e) { regex = new RegExp('', 'i'); }
-            const filtered = global100.filter(c => c.rank <= maxRank && (region === 'ALL' || c.region === region) && (regex.test(c.name) || regex.test(c.ticker) || regex.test(c.sector) || regex.test(c.country)));
+            const filtered = global100.filter(c => {
+                const matchRank = c.rank <= maxRank;
+                const matchRegion = region === 'ALL' || c.region === region;
+                const matchQuery = c.name.toLowerCase().includes(query) || c.ticker.toLowerCase().includes(query) || c.sector.toLowerCase().includes(query);
+                return matchRank && matchRegion && matchQuery;
+            });
             renderTop100(filtered);
         }
 
@@ -697,7 +695,7 @@
                 row.className = 'hover:bg-slate-800/50';
                 row.innerHTML = `
                     <td class="p-4 flex items-center gap-3">
-                        <img src="${c.logoUrl}" alt="${c.name}" class="w-8 h-8 rounded-lg object-contain bg-slate-950 p-1 border border-slate-800 shrink-0">
+                        <img src="${c.logoUrl}" alt="${c.name}" class="w-8 h-8 rounded-lg object-contain bg-slate-950 p-1 border border-slate-800 shrink-0" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=128'">
                         <div><div class="font-semibold text-white">${c.name}</div><div class="text-xs font-mono text-slate-400">Rank #${c.rank} • ${c.ticker}</div></div>
                     </td>
                     <td class="p-4 text-slate-400">${c.sector}</td>
@@ -715,7 +713,6 @@
             renderWatchlist();
         }
 
-        // CLIENT LOGIN SESSION & AUDIT LOGS
         function handleClientLogin() {
             const email = document.getElementById('loginEmail').value.trim();
             const org = document.getElementById('loginOrg').value.trim() || "Institutional Client";
@@ -799,7 +796,7 @@
             const csv = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
             const a = document.createElement("a");
             a.href = encodeURI(csv);
-            a.download = "CorpIndex_Suite_Global100.csv";
+            a.download = "CorpIndex_Global100_Report.csv";
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
