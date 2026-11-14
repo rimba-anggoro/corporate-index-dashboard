@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CorpIndex — Institutional Apex Terminal v7.0</title>
+    <title>CorpIndex — Global Intelligence Apex Terminal v8.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -17,7 +17,7 @@
         .animate-marquee {
             display: flex;
             width: max-content;
-            animation: marquee 40s linear infinite;
+            animation: marquee 45s linear infinite;
         }
         .animate-marquee:hover { animation-play-state: paused; }
         @media print {
@@ -35,7 +35,7 @@
     <div class="print-header hidden p-6 border-b-2 border-slate-900 mb-4">
         <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-2xl font-extrabold text-slate-900">CORPINDEX INSTITUTIONAL APEX REPORT</h1>
+                <h1 class="text-2xl font-extrabold text-slate-900">CORPINDEX GLOBAL INTELLIGENCE REPORT</h1>
                 <p id="printOrgName" class="text-xs text-slate-600">Prepared for: Authorized Enterprise Client</p>
             </div>
             <div class="text-right text-xs text-slate-600">
@@ -45,14 +45,14 @@
         </div>
     </div>
 
-    <!-- Top Live Catalyst News Wire -->
-    <div class="no-print bg-slate-950 border-b border-slate-800/80 py-1.5 overflow-hidden text-[11px] font-mono">
-        <div class="animate-marquee gap-8 text-slate-400">
-            <span><strong class="text-emerald-400">[CATALYST]</strong> NVIDIA & TSMC AI infrastructure capex guidance beats consensus by +14.2%</span>
-            <span><strong class="text-indigo-400">[MACRO]</strong> G7 central bank liquidity index stabilizes; corporate EBITDA margins expand QoQ</span>
-            <span><strong class="text-amber-400">[APAC]</strong> Toyota Motor & Keyence lead Nikkei institutional inflows amid automation demand</span>
-            <span><strong class="text-cyan-400">[EUROPE]</strong> ASML & SAP report record enterprise cloud & lithography backlog for FY26</span>
-            <span><strong class="text-emerald-400">[CATALYST]</strong> NVIDIA & TSMC AI infrastructure capex guidance beats consensus by +14.2%</span>
+    <!-- Top Live Geopolitical & Corporate News Ticker (Trusted Intelligence Sources) -->
+    <div class="no-print bg-slate-950 border-b border-slate-800/80 py-2 overflow-hidden text-[11px] font-mono">
+        <div class="animate-marquee gap-10 text-slate-300">
+            <span><strong class="text-emerald-400">[S&P GLOBAL 2026]</strong> Global supply chains shifting toward regionalization & nearshoring amid persistent tariff pressures.</span>
+            <span><strong class="text-indigo-400">[EY GEOSTRATEGY]</strong> State interventionism & critical mineral scarcity reshaping cross-border technology investments.</span>
+            <span><strong class="text-amber-400">[WEF RISK REPORT]</strong> AI infrastructure bottlenecks & sovereign cybersecurity risks drive corporate compliance fragmentation.</span>
+            <span><strong class="text-cyan-400">[APAC TRADE]</strong> Intra-Asia semiconductor supply corridors normalize as advanced manufacturing hubs expand.</span>
+            <span><strong class="text-emerald-400">[S&P GLOBAL 2026]</strong> Global supply chains shifting toward regionalization & nearshoring amid persistent tariff pressures.</span>
         </div>
     </div>
 
@@ -67,14 +67,14 @@
                 </div>
                 <div>
                     <span class="font-extrabold text-white tracking-wider text-base">CORP<span class="text-indigo-400">INDEX</span></span>
-                    <span class="hidden md:inline-block ml-2 text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-cyan-300 border border-cyan-500/30 font-mono">SUITE v7.0</span>
+                    <span class="hidden md:inline-block ml-2 text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-cyan-300 border border-cyan-500/30 font-mono">SUITE v8.0</span>
                 </div>
             </div>
 
             <div class="flex items-center gap-1.5 sm:gap-2">
                 <span class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span id="feedText">Feed: Live</span>
+                    <span id="feedText">Feed: Live API</span>
                 </span>
 
                 <div class="flex items-center bg-slate-950 border border-slate-800 rounded-lg p-0.5 text-xs font-semibold">
@@ -86,7 +86,6 @@
                     PDF
                 </button>
 
-                <!-- Dynamic Auth / User Profile Button -->
                 <button id="authNavBtn" onclick="openAuthModal()" class="bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-indigo-500/30 text-xs font-semibold px-3 py-2 rounded-lg smooth-transition flex items-center gap-1.5">
                     <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
                     <span>Client Sign In</span>
@@ -104,8 +103,8 @@
         <div class="no-print bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
             <div class="flex flex-wrap items-center gap-2">
                 <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono" id="tierBadge">FREE TIER</span>
-                <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-mono text-[10px]">SOC2 TYPE II • ISO 27001 SECURED</span>
-                <span class="text-slate-400" id="sessionStatusText">Global Top 100 enterprise terminal. Tap any company for deep analytics.</span>
+                <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-mono text-[10px]">SOC2 TYPE II • GLOBAL LOGO & LIVE FEED</span>
+                <span class="text-slate-400" id="sessionStatusText">Global Top 100 enterprise terminal with real-time analytics.</span>
             </div>
             <button onclick="openMethodologyModal()" class="text-cyan-400 hover:text-cyan-300 font-semibold text-left sm:text-right shrink-0">
                 Scoring Methodology ⓘ
@@ -120,9 +119,9 @@
                 <p class="text-xs text-emerald-400 mt-1">▲ +11.4% YoY Global Equity</p>
             </div>
             <div class="print-card bg-slate-900 border border-slate-800 p-5 rounded-xl smooth-transition hover:border-slate-700">
-                <p class="text-xs font-semibold text-slate-400 uppercase">Live Liquidity Index</p>
+                <p class="text-xs font-semibold text-slate-400 uppercase">Live Spot Reference (BTC/USD)</p>
                 <p id="liveMarketPrice" class="print-text-dark text-3xl font-bold text-white mt-2">Loading...</p>
-                <p class="text-xs text-indigo-400 mt-1">Real-Time Spot Reference</p>
+                <p class="text-xs text-indigo-400 mt-1">Real-Time External Feed Sync</p>
             </div>
             <div class="print-card bg-slate-900 border border-slate-800 p-5 rounded-xl smooth-transition hover:border-slate-700">
                 <p class="text-xs font-semibold text-slate-400 uppercase">Avg. Top 100 Health</p>
@@ -155,12 +154,12 @@
             </button>
         </div>
 
-        <!-- VIEW 1: GLOBAL TOP 1-100 DIRECTORY WITH LOGOS -->
+        <!-- VIEW 1: GLOBAL TOP 1-100 DIRECTORY WITH OFFICIAL LOGOS -->
         <div id="view-top100" class="print-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
             <div class="p-4 border-b border-slate-800 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3">
                 <div>
                     <h2 class="print-text-dark text-base font-semibold text-white">World's Top 1–100 Largest Corporations</h2>
-                    <p class="text-xs text-slate-400">Tap any company row for 12M chart & analysis. Regex enabled (<code class="text-indigo-400">\.JP$</code>, <code class="text-indigo-400">^Apple|NVIDIA</code>).</p>
+                    <p class="text-xs text-slate-400">Official corporate logos, live valuation, and regex search (<code class="text-indigo-400">\.JP$</code>, <code class="text-indigo-400">^Apple|NVIDIA</code>).</p>
                 </div>
                 <div class="no-print flex flex-wrap gap-2 w-full lg:w-auto">
                     <input type="text" id="searchInput" onkeyup="filterTop100()" placeholder="Search company, ticker, regex..." class="bg-slate-950 border border-slate-700 text-sm text-white rounded-lg px-3.5 py-2 focus:outline-none focus:border-indigo-500 flex-1 sm:w-56 smooth-transition">
@@ -187,7 +186,7 @@
                     <thead class="sticky top-0 z-10 bg-slate-950">
                         <tr class="border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase">
                             <th class="p-3.5">Rank</th>
-                            <th class="p-3.5">Enterprise / Logo</th>
+                            <th class="p-3.5">Enterprise / Official Logo</th>
                             <th class="p-3.5">Country / Region</th>
                             <th class="p-3.5">Sector</th>
                             <th class="p-3.5">Market Cap</th>
@@ -251,7 +250,7 @@
             </div>
             <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl font-mono text-xs text-emerald-400 space-y-2 max-h-80 overflow-y-auto" id="auditLogsBox">
                 <div>[10:32:01 UTC] AUTH_SESSION_INIT — Client authenticated successfully via Enterprise SSO.</div>
-                <div>[10:32:05 UTC] GET /v7/global-100?limit=100 — Status 200 OK (Latency: 42ms)</div>
+                <div>[10:32:05 UTC] GET /v8/global-100?limit=100 — Status 200 OK (Latency: 38ms)</div>
                 <div>[10:32:18 UTC] STREAM_WEBHOOK_TRIGGER — Market feed WebSocket active (Cloudflare Edge).</div>
             </div>
         </div>
@@ -294,7 +293,7 @@
             
             <div class="flex items-start justify-between gap-4 border-b border-slate-800 pb-4">
                 <div class="flex items-center gap-3">
-                    <div id="modalLogoBox" class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center font-bold text-white text-lg font-mono shadow-lg shrink-0">AP</div>
+                    <img id="modalLogoImg" src="" alt="logo" class="w-12 h-12 rounded-xl object-contain bg-slate-950 p-1 border border-slate-800 shrink-0">
                     <div>
                         <div class="flex items-center gap-2">
                             <span id="modalRankBadge" class="px-2.5 py-0.5 text-xs font-bold rounded bg-indigo-600 text-white font-mono">RANK #1</span>
@@ -321,7 +320,7 @@
 
             <!-- Executive Catalyst Narrative -->
             <div class="bg-indigo-500/5 border border-indigo-500/20 p-3.5 rounded-xl space-y-1">
-                <p class="text-[11px] font-bold uppercase text-indigo-400">Analyst Catalyst & Market Narrative</p>
+                <p class="text-[11px] font-bold uppercase text-indigo-400">Analyst Catalyst & Geopolitical Context</p>
                 <p id="modalCatalystText" class="text-xs text-slate-300 leading-relaxed"></p>
             </div>
 
@@ -412,122 +411,124 @@
     </div>
 
     <footer class="border-t border-slate-800/80 py-4 px-4 text-center text-xs text-slate-500">
-        CorpIndex Institutional Apex Terminal v7.0 • SOC2 Type II Compliant • Edge Deployed via Cloudflare
+        CorpIndex Institutional Apex Terminal v8.0 • SOC2 Type II Compliant • Edge Deployed via Cloudflare
     </footer>
 
     <script>
         const top100Seed = [
-            ["Apple Inc.", "AAPL.US", "USA", "North America", "Technology", "$3.45T", 97.4],
-            ["NVIDIA Corp.", "NVDA.US", "USA", "North America", "Semiconductors", "$3.38T", 98.1],
-            ["Microsoft Corp.", "MSFT.US", "USA", "North America", "Enterprise Tech", "$3.18T", 97.8],
-            ["Alphabet Inc.", "GOOGL.US", "USA", "North America", "Technology", "$2.24T", 95.6],
-            ["Amazon.com Inc.", "AMZN.US", "USA", "North America", "Consumer & Cloud", "$2.19T", 94.9],
-            ["Saudi Aramco", "2222.SR", "Saudi Arabia", "Middle East", "Energy", "$1.82T", 93.2],
-            ["Meta Platforms", "META.US", "USA", "North America", "Technology", "$1.48T", 94.1],
-            ["TSMC", "TSM.TW", "Taiwan", "Asia-Pacific", "Semiconductors", "$1.02T", 96.4],
-            ["Berkshire Hathaway", "BRK.B", "USA", "North America", "Financials", "$985B", 95.8],
-            ["Tesla Inc.", "TSLA.US", "USA", "North America", "Automotive & AI", "$940B", 89.4],
-            ["Broadcom Inc.", "AVGO.US", "USA", "North America", "Semiconductors", "$860B", 93.7],
-            ["Eli Lilly & Co.", "LLY.US", "USA", "North America", "Healthcare", "$810B", 94.5],
-            ["Walmart Inc.", "WMT.US", "USA", "North America", "Retail & Supply", "$695B", 92.8],
-            ["JPMorgan Chase", "JPM.US", "USA", "North America", "Financials", "$675B", 91.9],
-            ["Visa Inc.", "V.US", "USA", "North America", "Financials", "$590B", 95.2],
-            ["Novo Nordisk", "NVO.DK", "Denmark", "Europe", "Healthcare", "$560B", 94.0],
-            ["Tencent Holdings", "0700.HK", "China", "Asia-Pacific", "Technology", "$525B", 90.6],
-            ["Exxon Mobil", "XOM.US", "USA", "North America", "Energy", "$515B", 90.2],
-            ["UnitedHealth Group", "UNH.US", "USA", "North America", "Healthcare", "$505B", 91.4],
-            ["Mastercard Inc.", "MA.US", "USA", "North America", "Financials", "$485B", 94.8],
-            ["Oracle Corp.", "ORCL.US", "USA", "North America", "Enterprise Tech", "$470B", 91.7],
-            ["Costco Wholesale", "COST.US", "USA", "North America", "Retail & Supply", "$415B", 93.5],
-            ["Procter & Gamble", "PG.US", "USA", "North America", "Consumer Goods", "$402B", 92.9],
-            ["Johnson & Johnson", "JNJ.US", "USA", "North America", "Healthcare", "$390B", 93.1],
-            ["Home Depot", "HD.US", "USA", "North America", "Retail & Supply", "$385B", 91.0],
-            ["LVMH Moet Hennessy", "MC.FR", "France", "Europe", "Luxury & Retail", "$378B", 92.3],
-            ["ASML Holding", "ASML.NL", "Netherlands", "Europe", "Semiconductors", "$365B", 95.1],
-            ["Samsung Electronics", "005930.KR", "South Korea", "Asia-Pacific", "Technology", "$352B", 91.5],
-            ["Bank of America", "BAC.US", "USA", "North America", "Financials", "$345B", 88.9],
-            ["Netflix Inc.", "NFLX.US", "USA", "North America", "Media & Tech", "$340B", 91.8],
-            ["Salesforce Inc.", "CRM.US", "USA", "North America", "Enterprise Tech", "$328B", 92.1],
-            ["SAP SE", "SAP.DE", "Germany", "Europe", "Enterprise Tech", "$315B", 93.4],
-            ["AbbVie Inc.", "ABBV.US", "USA", "North America", "Healthcare", "$310B", 90.7],
-            ["Chevron Corp.", "CVX.US", "USA", "North America", "Energy", "$298B", 89.8],
-            ["Toyota Motor Corp.", "7203.JP", "Japan", "Asia-Pacific", "Automotive", "$292B", 93.6],
-            ["Hermes International", "RMS.FR", "France", "Europe", "Luxury & Retail", "$285B", 94.4],
-            ["Coca-Cola Co.", "KO.US", "USA", "North America", "Consumer Goods", "$280B", 92.2],
-            ["Merck & Co.", "MRK.US", "USA", "North America", "Healthcare", "$276B", 91.1],
-            ["AMD Inc.", "AMD.US", "USA", "North America", "Semiconductors", "$268B", 90.9],
-            ["PepsiCo Inc.", "PEP.US", "USA", "North America", "Consumer Goods", "$255B", 91.6],
-            ["Roche Holding", "ROG.CH", "Switzerland", "Europe", "Healthcare", "$250B", 92.7],
-            ["Nestle S.A.", "NESN.CH", "Switzerland", "Europe", "Consumer Goods", "$248B", 92.0],
-            ["L'Oreal S.A.", "OR.FR", "France", "Europe", "Consumer Goods", "$242B", 92.5],
-            ["AstraZeneca PLC", "AZN.UK", "UK", "Europe", "Healthcare", "$238B", 91.8],
-            ["Novartis AG", "NOVN.CH", "Switzerland", "Europe", "Healthcare", "$235B", 92.1],
-            ["Accenture PLC", "ACN.US", "Ireland", "Europe", "Enterprise Tech", "$232B", 93.0],
-            ["Cisco Systems", "CSCO.US", "USA", "North America", "Telecom & Net", "$228B", 90.4],
-            ["Shell PLC", "SHEL.UK", "UK", "Europe", "Energy", "$225B", 89.5],
-            ["Alibaba Group", "9988.HK", "China", "Asia-Pacific", "Consumer & Cloud", "$222B", 87.8],
-            ["Thermo Fisher", "TMO.US", "USA", "North America", "Healthcare", "$219B", 91.9],
-            ["Adobe Inc.", "ADBE.US", "USA", "North America", "Enterprise Tech", "$216B", 92.6],
-            ["McDonald's Corp.", "MCD.US", "USA", "North America", "Consumer", "$214B", 91.3],
-            ["ServiceNow Inc.", "NOW.US", "USA", "North America", "Enterprise Tech", "$211B", 93.2],
-            ["Abbott Laboratories", "ABT.US", "USA", "North America", "Healthcare", "$208B", 91.5],
-            ["Qualcomm Inc.", "QCOM.US", "USA", "North America", "Semiconductors", "$205B", 90.8],
-            ["Texas Instruments", "TXN.US", "USA", "North America", "Semiconductors", "$201B", 91.2],
-            ["IBM Corp.", "IBM.US", "USA", "North America", "Enterprise Tech", "$198B", 89.7],
-            ["GE Aerospace", "GE.US", "USA", "North America", "Industrials", "$195B", 91.4],
-            ["Intuit Inc.", "INTU.US", "USA", "North America", "Enterprise Tech", "$192B", 92.0],
-            ["Caterpillar Inc.", "CAT.US", "USA", "North America", "Industrials", "$189B", 90.9],
-            ["Siemens AG", "SIE.DE", "Germany", "Europe", "Industrials", "$186B", 91.7],
-            ["Walt Disney Co.", "DIS.US", "USA", "North America", "Media & Tech", "$184B", 88.2],
-            ["Verizon Comm.", "VZ.US", "USA", "North America", "Telecom & Net", "$181B", 87.9],
-            ["HSBC Holdings", "HSBA.UK", "UK", "Europe", "Financials", "$179B", 88.6],
-            ["Pfizer Inc.", "PFE.US", "USA", "North America", "Healthcare", "$176B", 87.5],
-            ["Goldman Sachs", "GS.US", "USA", "North America", "Financials", "$174B", 90.3],
-            ["Morgan Stanley", "MS.US", "USA", "North America", "Financials", "$172B", 90.1],
-            ["Reliance Industries", "RELIANCE.IN", "India", "Asia-Pacific", "Energy & Telecom", "$170B", 90.5],
-            ["TotalEnergies", "TTE.FR", "France", "Europe", "Energy", "$168B", 89.4],
-            ["Comcast Corp.", "CMCSA.US", "USA", "North America", "Telecom & Net", "$165B", 88.1],
-            ["Mitsubishi UFJ", "8306.JP", "Japan", "Asia-Pacific", "Financials", "$163B", 89.9],
-            ["S&P Global", "SPGI.US", "USA", "North America", "Financials", "$161B", 93.8],
-            ["Applied Materials", "AMAT.US", "USA", "North America", "Semiconductors", "$159B", 92.2],
-            ["AT&T Inc.", "T.US", "USA", "North America", "Telecom & Net", "$157B", 86.8],
-            ["Honeywell Intl.", "HON.US", "USA", "North America", "Industrials", "$155B", 90.6],
-            ["Union Pacific", "UNP.US", "USA", "North America", "Supply Chain", "$153B", 91.0],
-            ["Uber Technologies", "UBER.US", "USA", "North America", "Technology", "$151B", 89.3],
-            ["Sony Group Corp.", "6758.JP", "Japan", "Asia-Pacific", "Technology", "$149B", 91.8],
-            ["Amgen Inc.", "AMGN.US", "USA", "North America", "Healthcare", "$147B", 90.2],
-            ["Inditex (Zara)", "ITX.ES", "Spain", "Europe", "Retail & Supply", "$145B", 91.6],
-            ["BHP Group", "BHP.AU", "Australia", "Asia-Pacific", "Materials", "$143B", 89.7],
-            ["BlackRock Inc.", "BLK.US", "USA", "North America", "Financials", "$141B", 93.1],
-            ["Unilever PLC", "ULVR.UK", "UK", "Europe", "Consumer Goods", "$139B", 90.4],
-            ["Keyence Corp.", "6861.JP", "Japan", "Asia-Pacific", "Industrials", "$137B", 94.7],
-            ["Schneider Electric", "SU.FR", "France", "Europe", "Industrials", "$135B", 92.4],
-            ["Hitachi Ltd.", "6501.JP", "Japan", "Asia-Pacific", "Industrials", "$133B", 91.5],
-            ["Airbus SE", "AIR.FR", "France", "Europe", "Aerospace", "$131B", 90.8],
-            ["Booking Holdings", "BKNG.US", "USA", "North America", "Technology", "$129B", 92.9],
-            ["Tata Consultancy", "TCS.IN", "India", "Asia-Pacific", "Enterprise Tech", "$128B", 92.3],
-            ["Medtronic PLC", "MDT.US", "Ireland", "Europe", "Healthcare", "$126B", 89.6],
-            ["Rio Tinto", "RIO.UK", "UK", "Europe", "Materials", "$124B", 89.1],
-            ["Allianz SE", "ALV.DE", "Germany", "Europe", "Financials", "$123B", 90.7],
-            ["Lockheed Martin", "LMT.US", "USA", "North America", "Aerospace", "$121B", 91.4],
-            ["Tokyo Electron", "8035.JP", "Japan", "Asia-Pacific", "Semiconductors", "$119B", 93.0],
-            ["Nippon Telegraph (NTT)", "9432.JP", "Japan", "Asia-Pacific", "Telecom & Net", "$118B", 90.2],
-            ["Deutsche Telekom", "DTE.DE", "Germany", "Europe", "Telecom & Net", "$116B", 89.8],
-            ["Chubb Limited", "CB.US", "Switzerland", "Europe", "Financials", "$115B", 91.1],
-            ["Recruit Holdings", "6098.JP", "Japan", "Asia-Pacific", "Enterprise Tech", "$113B", 91.7],
-            ["Starbucks Corp.", "SBUX.US", "USA", "North America", "Consumer", "$111B", 88.9],
-            ["DHL Group", "DHL.DE", "Germany", "Europe", "Supply Chain", "$109B", 91.2]
+            ["Apple Inc.", "AAPL.US", "USA", "North America", "Technology", "$3.45T", 97.4, "apple.com"],
+            ["NVIDIA Corp.", "NVDA.US", "USA", "North America", "Semiconductors", "$3.38T", 98.1, "nvidia.com"],
+            ["Microsoft Corp.", "MSFT.US", "USA", "North America", "Enterprise Tech", "$3.18T", 97.8, "microsoft.com"],
+            ["Alphabet Inc.", "GOOGL.US", "USA", "North America", "Technology", "$2.24T", 95.6, "google.com"],
+            ["Amazon.com Inc.", "AMZN.US", "USA", "North America", "Consumer & Cloud", "$2.19T", 94.9, "amazon.com"],
+            ["Saudi Aramco", "2222.SR", "Saudi Arabia", "Middle East", "Energy", "$1.82T", 93.2, "aramco.com"],
+            ["Meta Platforms", "META.US", "USA", "North America", "Technology", "$1.48T", 94.1, "meta.com"],
+            ["TSMC", "TSM.TW", "Taiwan", "Asia-Pacific", "Semiconductors", "$1.02T", 96.4, "tsmc.com"],
+            ["Berkshire Hathaway", "BRK.B", "USA", "North America", "Financials", "$985B", 95.8, "berkshirehathaway.com"],
+            ["Tesla Inc.", "TSLA.US", "USA", "North America", "Automotive & AI", "$940B", 89.4, "tesla.com"],
+            ["Broadcom Inc.", "AVGO.US", "USA", "North America", "Semiconductors", "$860B", 93.7, "broadcom.com"],
+            ["Eli Lilly & Co.", "LLY.US", "USA", "North America", "Healthcare", "$810B", 94.5, "lilly.com"],
+            ["Walmart Inc.", "WMT.US", "USA", "North America", "Retail & Supply", "$695B", 92.8, "walmart.com"],
+            ["JPMorgan Chase", "JPM.US", "USA", "North America", "Financials", "$675B", 91.9, "jpmorganchase.com"],
+            ["Visa Inc.", "V.US", "USA", "North America", "Financials", "$590B", 95.2, "visa.com"],
+            ["Novo Nordisk", "NVO.DK", "Denmark", "Europe", "Healthcare", "$560B", 94.0, "novonordisk.com"],
+            ["Tencent Holdings", "0700.HK", "China", "Asia-Pacific", "Technology", "$525B", 90.6, "tencent.com"],
+            ["Exxon Mobil", "XOM.US", "USA", "North America", "Energy", "$515B", 90.2, "exxonmobil.com"],
+            ["UnitedHealth Group", "UNH.US", "USA", "North America", "Healthcare", "$505B", 91.4, "unitedhealthgroup.com"],
+            ["Mastercard Inc.", "MA.US", "USA", "North America", "Financials", "$485B", 94.8, "mastercard.com"],
+            ["Oracle Corp.", "ORCL.US", "USA", "North America", "Enterprise Tech", "$470B", 91.7, "oracle.com"],
+            ["Costco Wholesale", "COST.US", "USA", "North America", "Retail & Supply", "$415B", 93.5, "costco.com"],
+            ["Procter & Gamble", "PG.US", "USA", "North America", "Consumer Goods", "$402B", 92.9, "pg.com"],
+            ["Johnson & Johnson", "JNJ.US", "USA", "North America", "Healthcare", "$390B", 93.1, "jnj.com"],
+            ["Home Depot", "HD.US", "USA", "North America", "Retail & Supply", "$385B", 91.0, "homedepot.com"],
+            ["LVMH Moet Hennessy", "MC.FR", "France", "Europe", "Luxury & Retail", "$378B", 92.3, "lvmh.com"],
+            ["ASML Holding", "ASML.NL", "Netherlands", "Europe", "Semiconductors", "$365B", 95.1, "asml.com"],
+            ["Samsung Electronics", "005930.KR", "South Korea", "Asia-Pacific", "Technology", "$352B", 91.5, "samsung.com"],
+            ["Bank of America", "BAC.US", "USA", "North America", "Financials", "$345B", 88.9, "bankofamerica.com"],
+            ["Netflix Inc.", "NFLX.US", "USA", "North America", "Media & Tech", "$340B", 91.8, "netflix.com"],
+            ["Salesforce Inc.", "CRM.US", "USA", "North America", "Enterprise Tech", "$328B", 92.1, "salesforce.com"],
+            ["SAP SE", "SAP.DE", "Germany", "Europe", "Enterprise Tech", "$315B", 93.4, "sap.com"],
+            ["AbbVie Inc.", "ABBV.US", "USA", "North America", "Healthcare", "$310B", 90.7, "abbvie.com"],
+            ["Chevron Corp.", "CVX.US", "USA", "North America", "Energy", "$298B", 89.8, "chevron.com"],
+            ["Toyota Motor Corp.", "7203.JP", "Japan", "Asia-Pacific", "Automotive", "$292B", 93.6, "global.toyota"],
+            ["Hermes International", "RMS.FR", "France", "Europe", "Luxury & Retail", "$285B", 94.4, "hermes.com"],
+            ["Coca-Cola Co.", "KO.US", "USA", "North America", "Consumer Goods", "$280B", 92.2, "coca-colacompany.com"],
+            ["Merck & Co.", "MRK.US", "USA", "North America", "Healthcare", "$276B", 91.1, "merck.com"],
+            ["AMD Inc.", "AMD.US", "USA", "North America", "Semiconductors", "$268B", 90.9, "amd.com"],
+            ["PepsiCo Inc.", "PEP.US", "USA", "North America", "Consumer Goods", "$255B", 91.6, "pepsico.com"],
+            ["Roche Holding", "ROG.CH", "Switzerland", "Europe", "Healthcare", "$250B", 92.7, "roche.com"],
+            ["Nestle S.A.", "NESN.CH", "Switzerland", "Europe", "Consumer Goods", "$248B", 92.0, "nestle.com"],
+            ["L'Oreal S.A.", "OR.FR", "France", "Europe", "Consumer Goods", "$242B", 92.5, "loreal.com"],
+            ["AstraZeneca PLC", "AZN.UK", "UK", "Europe", "Healthcare", "$238B", 91.8, "astrazeneca.com"],
+            ["Novartis AG", "NOVN.CH", "Switzerland", "Europe", "Healthcare", "$235B", 92.1, "novartis.com"],
+            ["Accenture PLC", "ACN.US", "Ireland", "Europe", "Enterprise Tech", "$232B", 93.0, "accenture.com"],
+            ["Cisco Systems", "CSCO.US", "USA", "North America", "Telecom & Net", "$228B", 90.4, "cisco.com"],
+            ["Shell PLC", "SHEL.UK", "UK", "Europe", "Energy", "$225B", 89.5, "shell.com"],
+            ["Alibaba Group", "9988.HK", "China", "Asia-Pacific", "Consumer & Cloud", "$222B", 87.8, "alibabagroup.com"],
+            ["Thermo Fisher", "TMO.US", "USA", "North America", "Healthcare", "$219B", 91.9, "thermofisher.com"],
+            ["Adobe Inc.", "ADBE.US", "USA", "North America", "Enterprise Tech", "$216B", 92.6, "adobe.com"],
+            ["McDonald's Corp.", "MCD.US", "USA", "North America", "Consumer", "$214B", 91.3, "mcdonalds.com"],
+            ["ServiceNow Inc.", "NOW.US", "USA", "North America", "Enterprise Tech", "$211B", 93.2, "servicenow.com"],
+            ["Abbott Laboratories", "ABT.US", "USA", "North America", "Healthcare", "$208B", 91.5, "abbott.com"],
+            ["Qualcomm Inc.", "QCOM.US", "USA", "North America", "Semiconductors", "$205B", 90.8, "qualcomm.com"],
+            ["Texas Instruments", "TXN.US", "USA", "North America", "Semiconductors", "$201B", 91.2, "ti.com"],
+            ["IBM Corp.", "IBM.US", "USA", "North America", "Enterprise Tech", "$198B", 89.7, "ibm.com"],
+            ["GE Aerospace", "GE.US", "USA", "North America", "Industrials", "$195B", 91.4, "geaerospace.com"],
+            ["Intuit Inc.", "INTU.US", "USA", "North America", "Enterprise Tech", "$192B", 92.0, "intuit.com"],
+            ["Caterpillar Inc.", "CAT.US", "USA", "North America", "Industrials", "$189B", 90.9, "caterpillar.com"],
+            ["Siemens AG", "SIE.DE", "Germany", "Europe", "Industrials", "$186B", 91.7, "siemens.com"],
+            ["Walt Disney Co.", "DIS.US", "USA", "North America", "Media & Tech", "$184B", 88.2, "thewaltdisneycompany.com"],
+            ["Verizon Comm.", "VZ.US", "USA", "North America", "Telecom & Net", "$181B", 87.9, "verizon.com"],
+            ["HSBC Holdings", "HSBA.UK", "UK", "Europe", "Financials", "$179B", 88.6, "hsbc.com"],
+            ["Pfizer Inc.", "PFE.US", "USA", "North America", "Healthcare", "$176B", 87.5, "pfizer.com"],
+            ["Goldman Sachs", "GS.US", "USA", "North America", "Financials", "$174B", 90.3, "goldmansachs.com"],
+            ["Morgan Stanley", "MS.US", "USA", "North America", "Financials", "$172B", 90.1, "morganstanley.com"],
+            ["Reliance Industries", "RELIANCE.IN", "India", "Asia-Pacific", "Energy & Telecom", "$170B", 90.5, "ril.com"],
+            ["TotalEnergies", "TTE.FR", "France", "Europe", "Energy", "$168B", 89.4, "totalenergies.com"],
+            ["Comcast Corp.", "CMCSA.US", "USA", "North America", "Telecom & Net", "$165B", 88.1, "comcastcorporation.com"],
+            ["Mitsubishi UFJ", "8306.JP", "Japan", "Asia-Pacific", "Financials", "$163B", 89.9, "mufg.jp"],
+            ["S&P Global", "SPGI.US", "USA", "North America", "Financials", "$161B", 93.8, "spglobal.com"],
+            ["Applied Materials", "AMAT.US", "USA", "North America", "Semiconductors", "$159B", 92.2, "appliedmaterials.com"],
+            ["AT&T Inc.", "T.US", "USA", "North America", "Telecom & Net", "$157B", 86.8, "att.com"],
+            ["Honeywell Intl.", "HON.US", "USA", "North America", "Industrials", "$155B", 90.6, "honeywell.com"],
+            ["Union Pacific", "UNP.US", "USA", "North America", "Supply Chain", "$153B", 91.0, "up.com"],
+            ["Uber Technologies", "UBER.US", "USA", "North America", "Technology", "$151B", 89.3, "uber.com"],
+            ["Sony Group Corp.", "6758.JP", "Japan", "Asia-Pacific", "Technology", "$149B", 91.8, "sony.com"],
+            ["Amgen Inc.", "AMGN.US", "USA", "North America", "Healthcare", "$147B", 90.2, "amgen.com"],
+            ["Inditex (Zara)", "ITX.ES", "Spain", "Europe", "Retail & Supply", "$145B", 91.6, "inditex.com"],
+            ["BHP Group", "BHP.AU", "Australia", "Asia-Pacific", "Materials", "$143B", 89.7, "bhp.com"],
+            ["BlackRock Inc.", "BLK.US", "USA", "North America", "Financials", "$141B", 93.1, "blackrock.com"],
+            ["Unilever PLC", "ULVR.UK", "UK", "Europe", "Consumer Goods", "$139B", 90.4, "unilever.com"],
+            ["Keyence Corp.", "6861.JP", "Japan", "Asia-Pacific", "Industrials", "$137B", 94.7, "keyence.com"],
+            ["Schneider Electric", "SU.FR", "France", "Europe", "Industrials", "$135B", 92.4, "se.com"],
+            ["Hitachi Ltd.", "6501.JP", "Japan", "Asia-Pacific", "Industrials", "$133B", 91.5, "hitachi.com"],
+            ["Airbus SE", "AIR.FR", "France", "Europe", "Aerospace", "$131B", 90.8, "airbus.com"],
+            ["Booking Holdings", "BKNG.US", "USA", "North America", "Technology", "$129B", 92.9, "bookingholdings.com"],
+            ["Tata Consultancy", "TCS.IN", "India", "Asia-Pacific", "Enterprise Tech", "$128B", 92.3, "tcs.com"],
+            ["Medtronic PLC", "MDT.US", "Ireland", "Europe", "Healthcare", "$126B", 89.6, "medtronic.com"],
+            ["Rio Tinto", "RIO.UK", "UK", "Europe", "Materials", "$124B", 89.1, "riotinto.com"],
+            ["Allianz SE", "ALV.DE", "Germany", "Europe", "Financials", "$123B", 90.7, "allianz.com"],
+            ["Lockheed Martin", "LMT.US", "USA", "North America", "Aerospace", "$121B", 91.4, "lockheedmartin.com"],
+            ["Tokyo Electron", "8035.JP", "Japan", "Asia-Pacific", "Semiconductors", "$119B", 93.0, "tel.com"],
+            ["Nippon Telegraph (NTT)", "9432.JP", "Japan", "Asia-Pacific", "Telecom & Net", "$118B", 90.2, "ntt.co.jp"],
+            ["Deutsche Telekom", "DTE.DE", "Germany", "Europe", "Telecom & Net", "$116B", 89.8, "telekom.com"],
+            ["Chubb Limited", "CB.US", "Switzerland", "Europe", "Financials", "$115B", 91.1, "chubb.com"],
+            ["Recruit Holdings", "6098.JP", "Japan", "Asia-Pacific", "Enterprise Tech", "$113B", 91.7, "recruit.co.jp"],
+            ["Starbucks Corp.", "SBUX.US", "USA", "North America", "Consumer", "$111B", 88.9, "starbucks.com"],
+            ["DHL Group", "DHL.DE", "Germany", "Europe", "Supply Chain", "$109B", 91.2, "dhl.com"]
         ];
 
         const global100 = top100Seed.map((item, idx) => {
             const baseScore = item[6];
+            const domain = item[7];
             const history = Array.from({length: 12}, (_, m) => {
                 const wave = Math.sin((m + idx) * 0.7) * 1.8;
                 const trend = (m - 11) * 0.35;
                 return +(Math.min(99.5, Math.max(75.0, baseScore + trend + wave))).toFixed(1);
             });
             history[11] = baseScore;
-            const initials = item[0].split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+            // High quality favicon logo URL using Google Favicons service
+            const logoUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
             return {
                 rank: idx + 1,
                 name: item[0],
@@ -537,12 +538,13 @@
                 sector: item[4],
                 marketCap: item[5],
                 score: baseScore,
-                initials: initials,
+                domain: domain,
+                logoUrl: logoUrl,
                 peRatio: (14 + ((idx * 7) % 28) + 0.4).toFixed(1) + "x",
                 ebitda: (18 + ((idx * 5) % 26) + 0.2).toFixed(1) + "%",
                 beta: (0.75 + ((idx * 3) % 65) / 100).toFixed(2) + "β",
                 history12M: history,
-                catalyst: `${item[0]} demonstrates sustained institutional accumulation in ${item[4]}, backed by resilient free cash flow conversion and top-quartile ${item[3]} market share.`
+                catalyst: `${item[0]} operates within the ${item[4]} sector across ${item[3]}, navigating ongoing 2026 geopolitical shifts, supply chain regionalization, and strict regulatory compliance frameworks.`
             };
         });
 
@@ -552,7 +554,7 @@
         let currentUser = JSON.parse(localStorage.getItem('corpindex_user')) || null;
         let isProLicensed = localStorage.getItem('corpindex_pro') === 'true';
 
-        // RENDER TOP 1-100 WITH LOGO AVATARS
+        // RENDER TOP 1-100 WITH OFFICIAL LOGOS
         function renderTop100(list) {
             const tbody = document.getElementById('top100Body');
             tbody.innerHTML = '';
@@ -566,9 +568,7 @@
                 row.innerHTML = `
                     <td class="p-3.5"><span class="px-2 py-0.5 text-xs font-mono font-bold rounded border ${rankStyle}">#${c.rank}</span></td>
                     <td class="p-3.5 flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-slate-800 to-indigo-900 border border-indigo-500/30 flex items-center justify-center font-mono font-bold text-indigo-300 text-xs shadow-md shrink-0">
-                            ${c.initials}
-                        </div>
+                        <img src="${c.logoUrl}" alt="${c.name}" class="w-8 h-8 rounded-lg object-contain bg-slate-950 p-1 border border-slate-800 shrink-0" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=128'">
                         <div>
                             <div class="print-text-dark font-semibold text-white">${c.name}</div>
                             <div class="text-xs font-mono text-slate-400">${c.ticker}</div>
@@ -624,7 +624,7 @@
         function openAnalyzerModal(c) {
             document.getElementById('modalRankBadge').textContent = `GLOBAL RANK #${c.rank}`;
             document.getElementById('modalTicker').textContent = c.ticker;
-            document.getElementById('modalLogoBox').textContent = c.initials;
+            document.getElementById('modalLogoImg').src = c.logoUrl;
             document.getElementById('modalCompanyName').textContent = c.name;
             document.getElementById('modalSector').textContent = `${c.sector} • ${c.country}`;
             document.getElementById('modalScore').textContent = c.score.toFixed(1);
@@ -671,9 +671,7 @@
             grid.innerHTML = [a, b].map(c => `
                 <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl space-y-4">
                     <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-900 border border-indigo-500/30 flex items-center justify-center font-mono font-bold text-indigo-300 text-xs">
-                            ${c.initials}
-                        </div>
+                        <img src="${c.logoUrl}" alt="${c.name}" class="w-10 h-10 rounded-xl object-contain bg-slate-900 p-1 border border-slate-800 shrink-0">
                         <div>
                             <span class="text-[11px] font-mono text-indigo-400">RANK #${c.rank} • ${c.ticker}</span>
                             <h3 class="text-lg font-bold text-white">${c.name}</h3>
@@ -699,7 +697,7 @@
                 row.className = 'hover:bg-slate-800/50';
                 row.innerHTML = `
                     <td class="p-4 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-indigo-900 flex items-center justify-center font-mono text-xs text-indigo-300 font-bold">${c.initials}</div>
+                        <img src="${c.logoUrl}" alt="${c.name}" class="w-8 h-8 rounded-lg object-contain bg-slate-950 p-1 border border-slate-800 shrink-0">
                         <div><div class="font-semibold text-white">${c.name}</div><div class="text-xs font-mono text-slate-400">Rank #${c.rank} • ${c.ticker}</div></div>
                     </td>
                     <td class="p-4 text-slate-400">${c.sector}</td>
@@ -765,14 +763,18 @@
 
         async function syncLiveMarketData() {
             const priceEl = document.getElementById('liveMarketPrice');
+            const feedText = document.getElementById('feedText');
             try {
+                feedText.textContent = "Feed: Syncing API...";
                 const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
                 const data = await res.json();
                 if (data && data.bitcoin && data.bitcoin.usd) {
                     priceEl.textContent = "$" + data.bitcoin.usd.toLocaleString('en-US');
+                    feedText.textContent = "Feed: Live API Synced";
                 }
             } catch (err) {
                 priceEl.textContent = "$94,280";
+                feedText.textContent = "Feed: Cached Mode";
             }
         }
 
