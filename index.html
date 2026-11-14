@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Intelligence & Corporate Index Terminal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
-    <!-- Top Navigation Bar -->
-    <nav class="border-b border-slate-800/80 bg-slate-900/90 backdrop-blur sticky top-0 z-30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-sm">
-                    CI
-                </div>
-                <div>
-                    <span class="font-bold text-white tracking-tight text-base sm:text-lg">CORPINDEX</span>
-                    <span class="hidden sm:inline-block ml-2 text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">ENTERPRISE TERMINAL v2.4</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-2 sm:gap-3">
-                <span class="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    API Feed: Active
-                </span>
-                <button onclick="exportToCSV()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs
+function advancedFilter() {
+    // Mengambil nilai dari kotak input pencarian
+    const userInput = document.getElementById('searchInput').value;
+    
+    // Membuat pola Regex secara dinamis 
+    // 'i' berarti pencarian mengabaikan huruf besar/kecil (case-insensitive)
+    const regexPattern = new RegExp(userInput, 'i');
+
+    // Menyaring data perusahaan menggunakan Regex .test()
+    const filtered = companies.filter(c => {
+        return regexPattern.test(c.name) || regexPattern.test(c.ticker) || regexPattern.test(c.sector);
+    });
+
+    // Menampilkan ulang tabel dengan data yang sudah disaring
+    renderTable(filtered);
+}
